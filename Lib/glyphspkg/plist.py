@@ -10,7 +10,7 @@ def parse_plist_from_path(plist_path):
 
 def save_to_plist_path(obj, plist_path):
     with codecs.open(plist_path, "wb", "utf-8") as f:
-        f.write(openstep_plist.dumps(obj))
+        openstep_plist.dump(obj, f, unicode_escape=False, indent=0)
 
 
 # From glyphsLib.parser
