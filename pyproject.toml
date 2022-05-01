@@ -1,4 +1,10 @@
+[tool.black]
+target-version = ["py37"]
+
+[tool.setuptools_scm]
+write_to = "Lib/glyphspkg/_version.py"
+
 [build-system]
 # Minimum requirements for the build system to execute.
-requires = ["setuptools", "wheel"]  # PEP 508 specifications.
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.0"]
 build-backend = "setuptools.build_meta"
