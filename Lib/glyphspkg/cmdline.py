@@ -25,7 +25,7 @@ def main():
         "glyphsfile",
         type=str,
         nargs="+",
-        help="Path to glyphs files or packages to be converted.",
+        help="Path to the .glyphs file or .glyphspackage dir to be converted.",
     )
 
     arguments = parser.parse_args()
