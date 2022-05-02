@@ -1,9 +1,12 @@
 from os.path import basename, dirname, isfile, join, sep
+from typing import Optional
 from glyphspkg.filenames import userNameToFileName
 from glyphspkg.plist import parse_plist_from_path, save_to_plist_path
 
 
-def package_to_single(input_path, output_path=None):
+def package_to_single(
+    input_path: str, output_path: Optional[str] = None
+) -> None:
     # The main dict
     input_path = input_path.rstrip(sep)
     glyphs_file = convert_fontinfo(input_path)
@@ -58,7 +61,7 @@ def convert_order(input_path: str) -> list:
     return parse_plist_from_path(order_path)
 
 
-def convert_uistate(input_path) -> dict:
+def convert_uistate(input_path: str) -> dict:
     uistate_path = join(input_path, "UIState.plist")
     if not isfile(uistate_path):
         return {}

@@ -8,7 +8,7 @@ from glyphspkg.package_to_single import package_to_single
 from glyphspkg.single_to_package import single_to_package
 
 
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser()
 
     parser.add_argument(

@@ -34,7 +34,9 @@ class NameTranslationError(Exception):
     pass
 
 
-def userNameToFileName(userName, existing=[], prefix="", suffix=""):
+def userNameToFileName(
+    userName: str, existing: list = [], prefix: str = "", suffix: str = ""
+) -> str:
     """Converts from a user name to a file name.
 
     Takes care to avoid illegal characters, reserved file names, ambiguity
@@ -138,7 +140,9 @@ def userNameToFileName(userName, existing=[], prefix="", suffix=""):
     return fullName
 
 
-def handleClash1(userName, existing=[], prefix="", suffix=""):
+def handleClash1(
+    userName: str, existing: list = [], prefix: str = "", suffix: str = ""
+) -> str:
     """
     existing should be a case-insensitive list
     of all existing file names.
@@ -195,7 +199,9 @@ def handleClash1(userName, existing=[], prefix="", suffix=""):
     return finalName
 
 
-def handleClash2(existing=[], prefix="", suffix=""):
+def handleClash2(
+    existing: list = [], prefix: str = "", suffix: str = ""
+) -> str:
     """
     existing should be a case-insensitive list
     of all existing file names.

@@ -1,14 +1,15 @@
 import codecs
+from typing import Dict, List, Union
 import openstep_plist
 
 
-def parse_plist_from_path(plist_path):
+def parse_plist_from_path(plist_path: str) -> Union[Dict, List]:
     with codecs.open(plist_path, "rb", "utf-8") as f:
         d = f.read()
     return parse(d)
 
 
-def save_to_plist_path(obj, plist_path):
+def save_to_plist_path(obj: Union[Dict, List], plist_path: str) -> None:
     with codecs.open(plist_path, "wb", "utf-8") as f:
         openstep_plist.dump(
             obj, f, unicode_escape=False, indent=0, single_line_tuples=True
@@ -20,7 +21,7 @@ def save_to_plist_path(obj, plist_path):
 # Licensed under Apache-2.0
 
 
-def parse(d):
+def parse(d: Union[str, bytes]) -> Union[Dict, List]:
     try:
         if isinstance(d, str):
             d = _fl7_format_clean(d)
@@ -34,7 +35,7 @@ def parse(d):
     return result
 
 
-def _fl7_format_clean(d):
+def _fl7_format_clean(d: Union[str, bytes]) -> Union[str, bytes]:
     """
     FontLab 7 glyphs source format exports include a final closing semicolon.
     This method removes the semicolon before passing the string to the parser.
