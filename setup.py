@@ -35,7 +35,7 @@ setup(
         "Lib/glyphspkg/__init__.py",
         "Lib/glyphspkg/cmdline.py",
         "Lib/glyphspkg/filenames.py",
-        # "Lib/glyphspkg/package_to_single.py",
+        "Lib/glyphspkg/package_to_single.py",
         "Lib/glyphspkg/plist.py",
         # "Lib/glyphspkg/single_to_package.py",
     ]),
