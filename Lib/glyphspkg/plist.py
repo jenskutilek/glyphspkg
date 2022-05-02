@@ -17,6 +17,7 @@ def save_to_plist_path(obj, plist_path):
 # https://github.com/googlefonts/glyphsLib
 # Licensed under Apache-2.0
 
+
 def parse(d):
     try:
         if isinstance(d, str):
