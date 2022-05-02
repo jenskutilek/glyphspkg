@@ -21,28 +21,19 @@ def save_to_plist_path(obj: Union[Dict, List], plist_path: str) -> None:
 # Licensed under Apache-2.0
 
 
-def parse(d: Union[str, bytes]) -> Union[Dict, List]:
+def parse(d: str) -> Union[Dict, List]:
     try:
-        if isinstance(d, str):
-            d = _fl7_format_clean(d)
-            d = openstep_plist.loads(d, use_numbers=True)
-        elif isinstance(d, bytes):
-            d = _fl7_format_clean(d)
-            d = openstep_plist.loads(d.decode(), use_numbers=True)
-        result = d  # Do we need to parse it for our purpose?
+        d = _fl7_format_clean(d)
+        d = openstep_plist.loads(d, use_numbers=True)
     except openstep_plist.parser.ParseError as e:
         raise ValueError("Failed to parse file") from e
-    return result
+    return d
 
 
-def _fl7_format_clean(d: Union[str, bytes]) -> Union[str, bytes]:
+def _fl7_format_clean(d: str) -> str:
     """
     FontLab 7 glyphs source format exports include a final closing semicolon.
     This method removes the semicolon before passing the string to the parser.
     """
     # see https://github.com/googlefonts/fontmake/issues/806
-    if isinstance(d, str):
-        d = d.rstrip(";\n")
-    elif isinstance(d, bytes):
-        d = d.rstrip(b";\n")
-    return d
+    return d.rstrip(";\n")
