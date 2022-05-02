@@ -18,7 +18,7 @@ def main():
         type=str,
         help=(
             "Output path for converted files. If omitted, the file is saved "
-            "next to the original."
+            "next to the input file."
         ),
     )
     parser.add_argument(
