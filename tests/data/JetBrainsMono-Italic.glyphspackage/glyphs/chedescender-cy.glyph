@@ -1,0 +1,63 @@
+{
+glyphname = "chedescender-cy";
+layers = (
+{
+layerId = "EDF5EB54-295C-4C90-9A2F-67CD82979CFF";
+shapes = (
+{
+closed = 1;
+nodes = (
+(464,-140,l),
+(493,45,l),
+(443,45,l),
+(414,-140,l)
+);
+},
+{
+pos = (-3,0);
+ref = "che-cy";
+}
+);
+width = 600;
+},
+{
+layerId = "CCC0BD40-BA8C-414E-B576-CF0B94E6C996";
+shapes = (
+{
+closed = 1;
+nodes = (
+(474,-140,l),
+(509,80,l),
+(429,80,l),
+(394,-140,l)
+);
+},
+{
+pos = (-5,0);
+ref = "che-cy";
+}
+);
+width = 600;
+},
+{
+layerId = "9ADF6715-3D0F-493D-8567-18A6FBCFC567";
+shapes = (
+{
+closed = 1;
+nodes = (
+(519,-140,l),
+(563,140,l),
+(433,140,l),
+(389,-140,l)
+);
+},
+{
+pos = (-10,0);
+ref = "che-cy";
+}
+);
+width = 600;
+}
+);
+unicode = 1207;
+}

@@ -1,0 +1,60 @@
+{
+glyphname = tripleprime;
+layers = (
+{
+layerId = "EDF5EB54-295C-4C90-9A2F-67CD82979CFF";
+shapes = (
+{
+pos = (195,0);
+ref = minute;
+},
+{
+pos = (-140,0);
+ref = minute;
+},
+{
+pos = (27,0);
+ref = minute;
+}
+);
+width = 600;
+},
+{
+layerId = "CCC0BD40-BA8C-414E-B576-CF0B94E6C996";
+shapes = (
+{
+pos = (215,0);
+ref = minute;
+},
+{
+pos = (-145,0);
+ref = minute;
+},
+{
+pos = (35,0);
+ref = minute;
+}
+);
+width = 600;
+},
+{
+layerId = "9ADF6715-3D0F-493D-8567-18A6FBCFC567";
+shapes = (
+{
+pos = (225,0);
+ref = minute;
+},
+{
+pos = (-155,0);
+ref = minute;
+},
+{
+pos = (35,0);
+ref = minute;
+}
+);
+width = 600;
+}
+);
+unicode = 8244;
+}

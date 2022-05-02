@@ -1,0 +1,57 @@
+{
+glyphname = guilsinglleft;
+layers = (
+{
+layerId = "9ADF6715-3D0F-493D-8567-18A6FBCFC567";
+shapes = (
+{
+closed = 1;
+nodes = (
+(422,40,l),
+(290,274,l),
+(503,520,l),
+(348,520,l),
+(135,280,l),
+(272,40,l)
+);
+}
+);
+width = 600;
+},
+{
+layerId = "CCC0BD40-BA8C-414E-B576-CF0B94E6C996";
+shapes = (
+{
+closed = 1;
+nodes = (
+(412,40,l),
+(248,278,l),
+(493,520,l),
+(387,520,l),
+(147,280,l),
+(311,40,l)
+);
+}
+);
+width = 600;
+},
+{
+layerId = "EDF5EB54-295C-4C90-9A2F-67CD82979CFF";
+shapes = (
+{
+closed = 1;
+nodes = (
+(390,40,l),
+(230,277,l),
+(465,520,l),
+(406,520,l),
+(170,280,l),
+(333,40,l)
+);
+}
+);
+width = 600;
+}
+);
+unicode = 8249;
+}

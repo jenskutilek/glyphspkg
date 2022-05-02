@@ -1,0 +1,45 @@
+{
+export = 0;
+glyphname = racute.ss03;
+layers = (
+{
+layerId = "EDF5EB54-295C-4C90-9A2F-67CD82979CFF";
+shapes = (
+{
+pos = (640,0);
+ref = acutecomb;
+},
+{
+ref = r.ss03;
+}
+);
+width = 600;
+},
+{
+layerId = "CCC0BD40-BA8C-414E-B576-CF0B94E6C996";
+shapes = (
+{
+pos = (630,0);
+ref = acutecomb;
+},
+{
+ref = r.ss03;
+}
+);
+width = 600;
+},
+{
+layerId = "9ADF6715-3D0F-493D-8567-18A6FBCFC567";
+shapes = (
+{
+pos = (630,0);
+ref = acutecomb;
+},
+{
+ref = r.ss03;
+}
+);
+width = 600;
+}
+);
+}

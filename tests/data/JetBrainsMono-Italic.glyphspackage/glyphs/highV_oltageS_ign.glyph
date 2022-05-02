@@ -1,0 +1,57 @@
+{
+glyphname = highVoltageSign;
+layers = (
+{
+layerId = "EDF5EB54-295C-4C90-9A2F-67CD82979CFF";
+shapes = (
+{
+closed = 1;
+nodes = (
+(20,310,l),
+(295,310,l),
+(50,-110,l),
+(580,440,l),
+(290,440,l),
+(470,840,l)
+);
+}
+);
+width = 600;
+},
+{
+layerId = "CCC0BD40-BA8C-414E-B576-CF0B94E6C996";
+shapes = (
+{
+closed = 1;
+nodes = (
+(20,310,l),
+(295,310,l),
+(50,-110,l),
+(580,440,l),
+(290,440,l),
+(470,840,l)
+);
+}
+);
+width = 600;
+},
+{
+layerId = "9ADF6715-3D0F-493D-8567-18A6FBCFC567";
+shapes = (
+{
+closed = 1;
+nodes = (
+(19,310,l),
+(294,310,l),
+(49,-110,l),
+(579,440,l),
+(289,440,l),
+(469,840,l)
+);
+}
+);
+width = 600;
+}
+);
+unicode = 9889;
+}

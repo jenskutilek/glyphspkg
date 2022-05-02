@@ -1,0 +1,60 @@
+{
+export = 0;
+glyphname = lslash.ss01;
+layers = (
+{
+layerId = "9ADF6715-3D0F-493D-8567-18A6FBCFC567";
+shapes = (
+{
+closed = 1;
+nodes = (
+(510,416,l),
+(533,560,l),
+(123,370,l),
+(100,226,l)
+);
+},
+{
+ref = l.ss01;
+}
+);
+width = 600;
+},
+{
+layerId = "CCC0BD40-BA8C-414E-B576-CF0B94E6C996";
+shapes = (
+{
+closed = 1;
+nodes = (
+(514,475,l),
+(528,560,l),
+(119,310,l),
+(105,225,l)
+);
+},
+{
+ref = l.ss01;
+}
+);
+width = 600;
+},
+{
+layerId = "EDF5EB54-295C-4C90-9A2F-67CD82979CFF";
+shapes = (
+{
+closed = 1;
+nodes = (
+(520,492,l),
+(530,550,l),
+(119,295,l),
+(109,237,l)
+);
+},
+{
+ref = l.ss01;
+}
+);
+width = 600;
+}
+);
+}

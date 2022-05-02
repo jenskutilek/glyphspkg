@@ -1,0 +1,53 @@
+{
+glyphname = less_colon.liga;
+layers = (
+{
+layerId = "9ADF6715-3D0F-493D-8567-18A6FBCFC567";
+shapes = (
+{
+alignment = -1;
+pos = (-465,0);
+ref = less;
+},
+{
+alignment = -1;
+pos = (0,55);
+ref = colon;
+}
+);
+width = 600;
+},
+{
+layerId = "CCC0BD40-BA8C-414E-B576-CF0B94E6C996";
+shapes = (
+{
+alignment = -1;
+pos = (-460,0);
+ref = less;
+},
+{
+alignment = -1;
+pos = (0,55);
+ref = colon;
+}
+);
+width = 600;
+},
+{
+layerId = "EDF5EB54-295C-4C90-9A2F-67CD82979CFF";
+shapes = (
+{
+alignment = -1;
+pos = (-460,0);
+ref = less;
+},
+{
+alignment = -1;
+pos = (0,55);
+ref = colon;
+}
+);
+width = 600;
+}
+);
+}
