@@ -29,19 +29,13 @@ def package_to_single(
         glyph = parse_plist_from_path(file_path)
         glyphs.append(glyph)
 
-    if isinstance(glyphs_file, dict):
-        glyphs_file["glyphs"] = glyphs
-    else:
-        raise TypeError
+    glyphs_file["glyphs"] = glyphs
 
     # UIState, current display strings
     uistate = convert_uistate(input_path)
     if uistate:
-        if isinstance(uistate, dict):
-            # Why the different key casing?
-            glyphs_file["DisplayStrings"] = uistate["displayStrings"]
-    else:
-        raise TypeError
+        # Why the different key casing?
+        glyphs_file["DisplayStrings"] = uistate["displayStrings"]
 
     file_name = basename(input_path)
     if "." in file_name:
