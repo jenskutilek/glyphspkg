@@ -6,5 +6,5 @@ write_to = "Lib/glyphspkg/_version.py"
 
 [build-system]
 # Minimum requirements for the build system to execute.
-requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.0"]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.0", "mypy"]
 build-backend = "setuptools.build_meta"

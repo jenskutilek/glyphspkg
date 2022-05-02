@@ -1,5 +1,8 @@
 from setuptools import setup
 
+from mypyc.build import mypycify
+
+
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
@@ -28,4 +31,12 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    ext_modules=mypycify([
+        "Lib/glyphspkg/__init__.py",
+        "Lib/glyphspkg/cmdline.py",
+        "Lib/glyphspkg/filenames.py",
+        # "Lib/glyphspkg/package_to_single.py",
+        # "Lib/glyphspkg/plist.py",
+        # "Lib/glyphspkg/single_to_package.py",
+    ]),
 )
