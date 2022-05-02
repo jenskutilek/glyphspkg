@@ -3,13 +3,15 @@ from typing import Any, Dict, List, Union
 import openstep_plist
 
 
-def parse_plist_from_path(plist_path: str) -> Union[Dict, List]:
+def parse_plist_from_path(plist_path: str) -> Union[Dict[Any, Any], List[Any]]:
     with codecs.open(plist_path, "rb", "utf-8") as f:
         d = f.read()
     return parse(d)
 
 
-def save_to_plist_path(obj: Union[Dict, List], plist_path: str) -> None:
+def save_to_plist_path(
+    obj: Union[Dict[Any, Any], List[Any]], plist_path: str
+) -> None:
     with codecs.open(plist_path, "wb", "utf-8") as f:
         openstep_plist.dump(
             obj, f, unicode_escape=False, indent=0, single_line_tuples=True
@@ -21,7 +23,7 @@ def save_to_plist_path(obj: Union[Dict, List], plist_path: str) -> None:
 # Licensed under Apache-2.0
 
 
-def parse(d: str) -> Union[Dict, List]:
+def parse(d: str) -> Union[Dict[Any, Any], List[Any]]:
     try:
         d = _fl7_format_clean(d)
         result: Union[Dict[Any, Any], List[Any]] = openstep_plist.loads(
