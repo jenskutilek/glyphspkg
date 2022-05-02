@@ -32,7 +32,6 @@ def package_to_single(input_path, output_path=None):
     uistate = convert_uistate(input_path)
     if uistate:
         # Why the different key casing?
-        print(uistate["displayStrings"])
         glyphs_file["DisplayStrings"] = uistate["displayStrings"]
 
     file_name = basename(input_path)
