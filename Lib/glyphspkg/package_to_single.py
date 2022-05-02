@@ -1,5 +1,5 @@
 from os.path import basename, dirname, isfile, join, sep
-from typing import Optional
+from typing import Any, Dict, List, Optional, Union
 from glyphspkg.filenames import userNameToFileName
 from glyphspkg.plist import parse_plist_from_path, save_to_plist_path
 
@@ -29,13 +29,19 @@ def package_to_single(
         glyph = parse_plist_from_path(file_path)
         glyphs.append(glyph)
 
-    glyphs_file["glyphs"] = glyphs
+    if isinstance(glyphs_file, dict):
+        glyphs_file["glyphs"] = glyphs
+    else:
+        raise TypeError
 
     # UIState, current display strings
     uistate = convert_uistate(input_path)
     if uistate:
-        # Why the different key casing?
-        glyphs_file["DisplayStrings"] = uistate["displayStrings"]
+        if isinstance(uistate, dict):
+            # Why the different key casing?
+            glyphs_file["DisplayStrings"] = uistate["displayStrings"]
+    else:
+        raise TypeError
 
     file_name = basename(input_path)
     if "." in file_name:
@@ -51,17 +57,17 @@ def package_to_single(
     save_to_plist_path(glyphs_file, output_file_path)
 
 
-def convert_fontinfo(input_path: str) -> dict:
+def convert_fontinfo(input_path: str) -> Union[Dict[Any, Any], List[Any]]:
     fontinfo_path = join(input_path, "fontinfo.plist")
     return parse_plist_from_path(fontinfo_path)
 
 
-def convert_order(input_path: str) -> list:
+def convert_order(input_path: str) -> Union[Dict[Any, Any], List[Any]]:
     order_path = join(input_path, "order.plist")
     return parse_plist_from_path(order_path)
 
 
-def convert_uistate(input_path: str) -> dict:
+def convert_uistate(input_path: str) -> Union[Dict[Any, Any], List[Any]]:
     uistate_path = join(input_path, "UIState.plist")
     if not isfile(uistate_path):
         return {}
