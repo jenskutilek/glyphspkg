@@ -1,5 +1,5 @@
 import codecs
-from typing import Dict, List, Union
+from typing import Any, Dict, List, Union
 import openstep_plist
 
 
@@ -24,10 +24,12 @@ def save_to_plist_path(obj: Union[Dict, List], plist_path: str) -> None:
 def parse(d: str) -> Union[Dict, List]:
     try:
         d = _fl7_format_clean(d)
-        d = openstep_plist.loads(d, use_numbers=True)
+        result: Union[Dict[Any, Any], List[Any]] = openstep_plist.loads(
+            d, use_numbers=True
+        )
     except openstep_plist.parser.ParseError as e:
         raise ValueError("Failed to parse file") from e
-    return d
+    return result
 
 
 def _fl7_format_clean(d: str) -> str:
