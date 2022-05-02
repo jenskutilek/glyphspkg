@@ -8,7 +8,7 @@ build:
 
 .PHONY: wheel
 wheel:
-	python3 setup.py bdist_wheel
+	MYPYPATH=~/Code/glyphspkg/stubs python3 setup.py bdist_wheel
 
 .PHONY: clean
 clean:
