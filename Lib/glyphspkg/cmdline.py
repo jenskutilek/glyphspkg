@@ -11,6 +11,13 @@ from glyphspkg.single_to_package import single_to_package
 def main() -> None:
     parser = argparse.ArgumentParser()
 
+    # parser.add_argument(
+    #     "-i",
+    #     "--in-place",
+    #     action="store_true",
+    #     default=False,
+    #     help="Convert the file in place, i.e. remove the input file.",
+    # )
     parser.add_argument(
         "-o",
         "--output",
