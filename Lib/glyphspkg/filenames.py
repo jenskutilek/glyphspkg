@@ -22,6 +22,9 @@ by Tal Leming and is copyright (c) 2005-2016, The RoboFab Developers:
 """
 
 
+from typing import Optional
+
+
 illegalCharacters = r"\" * + / : < > ? [ \ ] | \0".split(" ")
 illegalCharacters += [chr(i) for i in range(1, 32)]
 illegalCharacters += [chr(0x7F)]
@@ -179,7 +182,7 @@ def handleClash1(
         l = prefixLength + len(userName) + suffixLength + 15
         sliceLength = maxFileNameLength - l
         userName = userName[:sliceLength]
-    finalName = None
+    finalName: Optional[str] = None
     # try to add numbers to create a unique name
     counter = 1
     while finalName is None:
@@ -231,7 +234,7 @@ def handleClash2(
     maxLength = maxFileNameLength - len(prefix) - len(suffix)
     maxValue = int("9" * maxLength)
     # try to find a number
-    finalName = None
+    finalName: Optional[str] = None
     counter = 1
     while finalName is None:
         fullName = prefix + str(counter) + suffix
