@@ -16,6 +16,11 @@ def get_tmp_path():
 
 
 class PackageToSingleText(unittest.TestCase):
+    def test_same_dir(self):
+        package_to_single(get_mono_path())
+        out_file = get_mono_path().with_suffix(".glyphs")
+        assert out_file.is_file()
+
     def test_with_output_dir(self):
         out_dir = get_tmp_path()
         package_to_single(get_mono_path(), out_dir)
