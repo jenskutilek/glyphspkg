@@ -1,16 +1,20 @@
 import codecs
-from typing import Any, Dict, List, Union
 import openstep_plist
 
+from pathlib import Path
+from typing import Any, Dict, List, Union
 
-def parse_plist_from_path(plist_path: str) -> Union[Dict[Any, Any], List[Any]]:
+
+def parse_plist_from_path(
+    plist_path: Path,
+) -> Union[Dict[Any, Any], List[Any]]:
     with codecs.open(plist_path, "rb", "utf-8") as f:
         d = f.read()
     return parse(d)
 
 
 def save_to_plist_path(
-    obj: Union[Dict[Any, Any], List[Any]], plist_path: str
+    obj: Union[Dict[Any, Any], List[Any]], plist_path: Path
 ) -> None:
     with codecs.open(plist_path, "wb", "utf-8") as f:
         openstep_plist.dump(

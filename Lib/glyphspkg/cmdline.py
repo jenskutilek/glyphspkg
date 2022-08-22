@@ -3,9 +3,9 @@ Command line interface for compilation/decompilation
 """
 
 import argparse
-from os.path import isdir
 from glyphspkg.package_to_single import package_to_single
 from glyphspkg.single_to_package import single_to_package
+from pathlib import Path
 
 
 def main() -> None:
@@ -41,11 +41,12 @@ def main() -> None:
         parser.print_help()
         return
 
-    for input_path in arguments.glyphsfile:
+    for inp in arguments.glyphsfile:
+        input_path = Path(inp)
         print("Reading:", input_path)
-        if isdir(input_path):
+        if input_path.isdir():
             # The file is a package, convert to single
-            package_to_single(input_path, arguments.output_path)
+            package_to_single(input_path, Path(arguments.output_path))
         else:
             # The file is a single file, convert to package
-            single_to_package(input_path, arguments.output_path)
+            single_to_package(input_path, Path(arguments.output_path))
