@@ -31,3 +31,8 @@ options:
   -o OUTPUT_PATH, --output OUTPUT_PATH
                         Output path for converted files. If omitted, the file is saved next to the original.
 ```
+
+
+## Known issues
+
+Only conversion from `.glyphspackage` to `.glyphs` is implemented at the moment.
