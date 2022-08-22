@@ -41,13 +41,13 @@ def package_to_single(
         # Why the different key casing?
         glyphs_file["DisplayStrings"] = uistate["displayStrings"]
 
+    file_name = input_path.with_suffix(".glyphs").name
     if output_path is None:
         # No path was specified, save next to original file
-        output_path = input_path.parent
+        output_file_path = input_path.parent / file_name
     elif output_path.is_dir():
         # Output directory was specified, save to original file name with
         # changed suffix in new dir
-        file_name = input_path.with_suffix(".glyphs").name
         output_file_path = output_path / file_name
     else:
         # Full path with file name was specified, save there
