@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 def package_to_single(
     input_path: Path, output_path: Optional[Path] = None
-) -> None:
+) -> Path:
     # The main dict
     glyphs_file = convert_fontinfo(input_path)
 
@@ -24,7 +24,7 @@ def package_to_single(
         file_name = userNameToFileName(glyph_name)
         file_path = input_path / "glyphs" / f"{file_name}.glyph"
         if not file_path.is_file():
-            logger.warn(
+            logger.warning(
                 f"Glyph file not found for glyph '{glyph_name}': "
                 f"{file_name}, glyph will be missing in converted file."
             )
@@ -41,6 +41,19 @@ def package_to_single(
         # Why the different key casing?
         glyphs_file["DisplayStrings"] = uistate["displayStrings"]
 
+    output_file_path = build_output_file_path(input_path, output_path)
+    if input_path == output_file_path:
+        logger.error(f"Saving would overwrite the input file {input_path}")
+        raise(FileExistsError)
+
+    logger.info(f"Saving: {output_file_path}")
+    save_to_plist_path(glyphs_file, output_file_path)
+    return output_file_path
+
+
+def build_output_file_path(
+    input_path: Path, output_path: Optional[Path] = None
+) -> Path:
     file_name = input_path.with_suffix(".glyphs").name
     if output_path is None:
         # No path was specified, save next to original file
@@ -53,9 +66,7 @@ def package_to_single(
         # Full path with file name was specified, save there
         output_file_path = output_path
 
-    assert input_path != output_file_path
-    logger.info(f"Saving: {output_file_path}")
-    save_to_plist_path(glyphs_file, output_file_path)
+    return output_file_path
 
 
 def convert_fontinfo(input_path: Path) -> Union[Dict[Any, Any], List[Any]]:

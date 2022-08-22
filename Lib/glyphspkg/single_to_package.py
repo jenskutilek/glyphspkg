@@ -4,5 +4,5 @@ from typing import Optional
 
 def single_to_package(
     input_path: Path, output_path: Optional[Path] = None
-) -> None:
+) -> Path:
     raise NotImplementedError
