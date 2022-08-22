@@ -1,7 +1,12 @@
 from os.path import basename, dirname, isfile, join, sep
 from typing import Any, Dict, List, Optional, Union
+import logging
+
 from glyphspkg.filenames import userNameToFileName
 from glyphspkg.plist import parse_plist_from_path, save_to_plist_path
+
+
+logger = logging.getLogger(__name__)
 
 
 def package_to_single(
@@ -20,8 +25,8 @@ def package_to_single(
         file_name = userNameToFileName(glyph_name)
         file_path = join(input_path, "glyphs", f"{file_name}.glyph")
         if not isfile(file_path):
-            print(
-                f"WARNING: Glyph file not found for glyph '{glyph_name}': "
+            logger.warn(
+                f"Glyph file not found for glyph '{glyph_name}': "
                 f"{file_name}, glyph will be missing in converted file."
             )
             continue
@@ -47,7 +52,7 @@ def package_to_single(
 
     output_file_path = join(output_path, file_name)
     assert input_path != output_file_path
-    print(f"Saving: {output_file_path}")
+    logger.info(f"Saving: {output_file_path}")
     save_to_plist_path(glyphs_file, output_file_path)
 
 
