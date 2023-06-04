@@ -25,12 +25,15 @@ class PackageToSingleText(unittest.TestCase):
 
     def test_with_output_dir(self):
         out_dir = get_tmp_path()
+        out_dir.mkdir(exist_ok=True)
         package_to_single(get_mono_path(), out_dir)
         out_file = out_dir / "JetBrainsMono-Italic.glyphs"
         assert out_file.is_file()
 
     def test_with_output_file(self):
-        out_file = get_tmp_path() / "custom.glyphs"
+        out_dir = get_tmp_path()
+        out_dir.mkdir(exist_ok=True)
+        out_file = out_dir / "custom.glyphs"
         package_to_single(get_mono_path(), out_file)
         assert out_file.is_file()
 
@@ -41,3 +44,4 @@ class PackageToSingleText(unittest.TestCase):
                 entry.rmdir()
             else:
                 entry.unlink()
+        get_tmp_path().rmdir()
