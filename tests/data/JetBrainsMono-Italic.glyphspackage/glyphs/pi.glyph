@@ -35,30 +35,25 @@ width = 600;
 {
 hints = (
 {
-place = (57, 47);
-place = (57, 47);
+place = (57,47);
 type = Stem;
 },
 {
-place = (342, 47);
-place = (342, 47);
+place = (342,47);
 type = Stem;
 },
 {
-place = (342, 147);
-place = (342, 147);
-type = Stem;
-},
-{
-horizontal = 1;
-place = (-48, 41);
-place = (-48, 41);
+place = (342,147);
 type = Stem;
 },
 {
 horizontal = 1;
-place = (425, 39);
-place = (425, 39);
+place = (-48,41);
+type = Stem;
+},
+{
+horizontal = 1;
+place = (425,39);
 type = Stem;
 }
 );

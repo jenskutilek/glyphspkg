@@ -1,5 +1,5 @@
 {
-.appVersion = "3124";
+.appVersion = "3306";
 .formatVersion = 3;
 axes = (
 {
@@ -72,15 +72,15 @@ size = 10;
 },
 {
 pos = 0;
-size = "-10";
+size = -10;
 },
 {
-pos = "-110";
-size = "-10";
+pos = -110;
+size = -10;
 },
 {
-pos = "-180";
-size = "-10";
+pos = -180;
+size = -10;
 }
 );
 },
@@ -1583,12 +1583,12 @@ pos = 830;
 size = 10;
 },
 {
-pos = "-110";
-size = "-10";
+pos = -110;
+size = -10;
 },
 {
-pos = "-180";
-size = "-10";
+pos = -180;
+size = -10;
 }
 );
 }
@@ -1695,12 +1695,12 @@ pos = 830;
 size = 10;
 },
 {
-pos = "-110";
-size = "-10";
+pos = -110;
+size = -10;
 },
 {
-pos = "-180";
-size = "-10";
+pos = -180;
+size = -10;
 }
 );
 }
@@ -1798,12 +1798,12 @@ pos = 830;
 size = 10;
 },
 {
-pos = "-110";
-size = "-10";
+pos = -110;
+size = -10;
 },
 {
-pos = "-180";
-size = "-10";
+pos = -180;
+size = -10;
 }
 );
 }
@@ -2124,9 +2124,6 @@ name = "Variable Font Origin";
 value = "CCC0BD40-BA8C-414E-B576-CF0B94E6C996";
 }
 );
-instanceInterpolations = {
-"EDF5EB54-295C-4C90-9A2F-67CD82979CFF" = 1;
-};
 name = Regular;
 type = variable;
 }
@@ -2175,19 +2172,6 @@ key = designerURL;
 value = "https://www.jetbrains.com";
 },
 {
-key = manufacturers;
-values = (
-{
-language = dflt;
-value = JetBrains;
-}
-);
-},
-{
-key = manufacturerURL;
-value = "https://www.jetbrains.com";
-},
-{
 key = licenses;
 values = (
 {
@@ -2199,6 +2183,19 @@ value = "This Font Software is licensed under the SIL Open Font License, Version
 {
 key = licenseURL;
 value = "https://scripts.sil.org/OFL";
+},
+{
+key = manufacturers;
+values = (
+{
+language = dflt;
+value = JetBrains;
+}
+);
+},
+{
+key = manufacturerURL;
+value = "https://www.jetbrains.com";
 },
 {
 key = trademarks;

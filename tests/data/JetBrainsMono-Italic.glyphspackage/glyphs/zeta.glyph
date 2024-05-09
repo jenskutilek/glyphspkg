@@ -85,26 +85,22 @@ width = 600;
 hints = (
 {
 horizontal = 1;
-place = (-43, 36);
-place = (-43, 36);
+place = (-43,36);
 type = Stem;
 },
 {
 horizontal = 1;
-place = (598, 36);
-place = (598, 36);
+place = (598,36);
 type = Stem;
 },
 {
 horizontal = 1;
-place = (-43, 36);
-place = (-43, 36);
+place = (-43,36);
 type = Stem;
 },
 {
 horizontal = 1;
-place = (598, 36);
-place = (598, 36);
+place = (598,36);
 type = Stem;
 }
 );

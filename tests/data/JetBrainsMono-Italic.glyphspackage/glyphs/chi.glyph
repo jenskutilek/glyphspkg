@@ -16,13 +16,13 @@ width = 600;
 hints = (
 {
 horizontal = 1;
-place = (550.803, -20);
+place = (550.803,-20);
 target = down;
 type = TopGhost;
 },
 {
 horizontal = 1;
-place = (-165, 21);
+place = (-165,21);
 target = up;
 type = BottomGhost;
 }
