@@ -2,6 +2,7 @@ import pytest
 import unittest
 
 from glyphspkg.package_to_single import package_to_single
+from glyphspkg.paths import rmdir
 from pathlib import Path
 
 
@@ -39,9 +40,4 @@ class PackageToSingleText(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        for entry in get_tmp_path().iterdir():
-            if entry.is_dir():
-                entry.rmdir()
-            else:
-                entry.unlink()
-        get_tmp_path().rmdir()
+        rmdir(get_tmp_path())

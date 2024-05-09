@@ -18,3 +18,18 @@ def build_output_file_path(
         output_file_path = output_path
 
     return output_file_path
+
+
+def rmdir(directory: Path):
+    """Recursively remove files and directories from a directory, then remove the
+    directory itself.
+
+    Args:
+        directory (Path): The directory to remove.
+    """
+    for item in directory.iterdir():
+        if item.is_dir():
+            rmdir(item)
+        else:
+            item.unlink()
+    directory.rmdir()
