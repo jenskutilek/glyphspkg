@@ -10,9 +10,7 @@ from typing import Any, Dict, List, Optional, Union
 logger = logging.getLogger(__name__)
 
 
-def package_to_single(
-    input_path: Path, output_path: Optional[Path] = None
-) -> Path:
+def package_to_single(input_path: Path, output_path: Optional[Path] = None) -> Path:
     # The main dict
     glyphs_file = convert_fontinfo(input_path)
 
@@ -45,7 +43,7 @@ def package_to_single(
     output_file_path = build_output_file_path(input_path, output_path)
     if input_path == output_file_path:
         logger.error(f"Saving would overwrite the input file {input_path}")
-        raise(FileExistsError)
+        raise FileExistsError
 
     logger.info(f"Saving: {output_file_path}")
     save_to_plist_path(glyphs_file, output_file_path)
