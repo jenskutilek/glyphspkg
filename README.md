@@ -1,6 +1,6 @@
 # glyphspkg
 
-Converter for GlyphsApp package to monolithic files.
+Converter for GlyphsApp package to monolithic files and vice versa.
 
 [Glyphs](https://glyphsapp.com) supports two different file formats, both of
 which are based on plist. One, using the suffix `.glyphs`, is a monolithic
@@ -31,8 +31,3 @@ options:
   -o OUTPUT_PATH, --output OUTPUT_PATH
                         Output path for converted files. If omitted, the file is saved next to the original.
 ```
-
-
-## Known issues
-
-Only conversion from `.glyphspackage` to `.glyphs` is implemented at the moment.
