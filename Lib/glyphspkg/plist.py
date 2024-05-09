@@ -13,12 +13,17 @@ def parse_plist_from_path(
     return parse(d)
 
 
-def save_to_plist_path(
-    obj: Union[Dict[Any, Any], List[Any]], plist_path: Path
-) -> None:
+def save_to_plist_path(obj: Union[Dict[Any, Any], List[Any]], plist_path: Path) -> None:
     with codecs.open(str(plist_path), "wb", "utf-8") as f:
         openstep_plist.dump(
-            obj, f, unicode_escape=False, indent=0, single_line_tuples=True
+            obj,
+            f,
+            unicode_escape=False,
+            indent=0,
+            single_line_tuples=True,
+            # TODO: The released version 0.3.1 of openstep_plist doesn't have the
+            # ``escape_newlines`` argument
+            # escape_newlines=False,
         )
 
 
