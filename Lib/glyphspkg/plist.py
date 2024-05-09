@@ -8,7 +8,7 @@ from typing import Any, Dict, List, Union
 def parse_plist_from_path(
     plist_path: Path,
 ) -> Union[Dict[Any, Any], List[Any]]:
-    with codecs.open(plist_path, "rb", "utf-8") as f:
+    with codecs.open(str(plist_path), "rb", "utf-8") as f:
         d = f.read()
     return parse(d)
 
@@ -16,7 +16,7 @@ def parse_plist_from_path(
 def save_to_plist_path(
     obj: Union[Dict[Any, Any], List[Any]], plist_path: Path
 ) -> None:
-    with codecs.open(plist_path, "wb", "utf-8") as f:
+    with codecs.open(str(plist_path), "wb", "utf-8") as f:
         openstep_plist.dump(
             obj, f, unicode_escape=False, indent=0, single_line_tuples=True
         )
