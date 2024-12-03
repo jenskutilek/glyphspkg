@@ -3,9 +3,10 @@ Command line interface for compilation/decompilation
 """
 
 import argparse
+from pathlib import Path
+
 from glyphspkg.package_to_single import package_to_single
 from glyphspkg.single_to_package import single_to_package
-from pathlib import Path
 
 
 def main() -> None:

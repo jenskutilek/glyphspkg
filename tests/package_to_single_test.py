@@ -1,15 +1,14 @@
-import pytest
 import unittest
+from pathlib import Path
+
+import pytest
 
 from glyphspkg.package_to_single import package_to_single
 from glyphspkg.paths import rmdir
-from pathlib import Path
 
 
 def get_mono_path():
-    return (
-        Path(__file__).parent / "data" / "JetBrainsMono-Italic.glyphspackage"
-    )
+    return Path(__file__).parent / "data" / "JetBrainsMono-Italic.glyphspackage"
 
 
 def get_tmp_path():

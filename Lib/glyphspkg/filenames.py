@@ -24,7 +24,6 @@ by Tal Leming and is copyright (c) 2005-2016, The RoboFab Developers:
 
 from typing import Optional
 
-
 illegalCharacters = r"\" * + / : < > ? [ \ ] | \0".split(" ")
 illegalCharacters += [chr(i) for i in range(1, 32)]
 illegalCharacters += [chr(0x7F)]
@@ -202,9 +201,7 @@ def handleClash1(
     return finalName
 
 
-def handleClash2(
-    existing: list = [], prefix: str = "", suffix: str = ""
-) -> str:
+def handleClash2(existing: list = [], prefix: str = "", suffix: str = "") -> str:
     """
     existing should be a case-insensitive list
     of all existing file names.

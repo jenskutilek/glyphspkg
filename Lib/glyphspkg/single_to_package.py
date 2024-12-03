@@ -1,11 +1,10 @@
 import logging
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Union
 
 from glyphspkg.filenames import userNameToFileName
 from glyphspkg.paths import build_output_file_path, rmdir
 from glyphspkg.plist import parse_plist_from_path, save_to_plist_path
-from pathlib import Path
-from typing import Any, Dict, List, Optional, Union
-
 
 logger = logging.getLogger(__name__)
 

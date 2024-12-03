@@ -1,8 +1,8 @@
 import codecs
-import openstep_plist
-
 from pathlib import Path
 from typing import Any, Dict, List, Union
+
+import openstep_plist
 
 
 def parse_plist_from_path(
