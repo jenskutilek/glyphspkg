@@ -17,6 +17,11 @@ def single_to_package(input_path: Path, output_path: Optional[Path] = None) -> P
 
     # The main dict
     glyphs_file = parse_plist_from_path(input_path)
+    if isinstance(glyphs_file, List):
+        logger.error(
+            f"Parse error. The file should parse as a dict, not list: {input_path}"
+        )
+        raise TypeError
 
     logger.info(f"Saving: {output_file_path}")
 

@@ -12,6 +12,12 @@ logger = logging.getLogger(__name__)
 def package_to_single(input_path: Path, output_path: Optional[Path] = None) -> Path:
     # The main dict
     glyphs_file = convert_fontinfo(input_path)
+    if isinstance(glyphs_file, List):
+        logger.error(
+            "Parse error. The fontinfo file should parse as a dict, not list: "
+            f"{input_path}"
+        )
+        raise TypeError
 
     # Glyph order, is used to read individual glyphs files
     glyph_order = convert_order(input_path)
@@ -35,6 +41,13 @@ def package_to_single(input_path: Path, output_path: Optional[Path] = None) -> P
 
     # UIState, current display strings
     uistate = convert_uistate(input_path)
+    if isinstance(uistate, List):
+        logger.error(
+            "Parse error. The uistate file should parse as a dict, not list: "
+            f"{input_path}"
+        )
+        raise TypeError
+
     if uistate:
         # Why the different key casing?
         glyphs_file["DisplayStrings"] = uistate["displayStrings"]
